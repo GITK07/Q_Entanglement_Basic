@@ -1,13 +1,24 @@
-# Q_Entanglement_Basic
+# Quantum Entanglement Basic
+
+Quantum Entanglement in Quantum Mechanics refers to the phenomenon of a group of particles where the state of each particle cannot be described independently i.e without the invlovement of the other particles in the shared group. This group of particles interact with each other in the way that their properties like momentum, spin, etc are correlated no matter the distance between them. This Quantum Entanglement is the phenomenon that is fascinating in the way that it lets the properties of unknown entangled particles be known by examining and measuring the particles of the entangled particles known to us, which again is a dilemma in the field of Quantum Mechanics i.e Whether this information is inherent in the particles from the very beginning or this information travels in real time whence one of them is measured, which again raises some questions in the Theory of Special Relativity. This is due to the fact that Albert Einstein in his theory states that nothing in this universe can travel faster then light but if this information is to be travelled in real time then it must defy the former making Special Relativity irrelevant, which, we know for a fact, it is not but if this information is already present somehow in the particles then how come it changes in real time upon performing transformations? Of course Quantum Mechanics is weird and that is Albert Einstein once said , "The more success the quantum theory has, the sillier it looks.".
+
 This repository shows the basic Quantum Entanglement Circuit built using the qiskit* library provided by IBM.
 
 This shows the basic implementation of the circuit where first three qubits are taken and Quantum gates are applied to them as per the rquirements.
+
 X Gate = Applied to only a single Qubit. Representation of Pauli-X Gate is a simple Bit-Flip.
 H Gate = Hadamard Gate, applied on a single qubit and changes |0> to |+> and |1> to |-> and vice versa.
-CX Gate = Controlled-X Gate for a binary qubit operation. It is somewhat similar to the classical XOR Gate.
+CX Gate = Controlled-X Gate for a binary qubit operation. It is analogous to the classical XOR Gate.
+
 Barriers are applied to separate one section of the circuit from the other.
-Next the cicuit is measured which can be seen in the cicuital representation. Measuring quantum circuits is not the sam as the classical ones due to the presence of something known as "Noise" which requires the former to be executed multiple times for the correct outcome to be measured via the probability of the outcome having more of it.
+Next the cicuit is measured which can be seen in the cicuital representation. Measuring quantum circuits is not the sam as the classical ones due to the presence of something known as "Noise" which requires the former to be executed multiple times for the correct outcome to be measured via the probability amplitude of the outcome having more of it.
 Here the "counts" variable dictates the number of times the circuit must execute and provide the output for the same.
 This concludes the basics of the code and its implementation.
+
+One personal analogy of mine to understand it better (I don't know if it really is mathematically and theoretically correct to think about it like this but the fact that it makes Entanglement easier to understand is what drives me to share with everyone): 
+Suppose the group only containes two entangled particles and think of them as a pair of gloves. Now to illustrate the irrelevance of the distance between them, think of them being washed with other clothes (ahem* unentangled particles ahem*) in a washing machine ( Emulating a suitable environment for the entanglement to take place i.e the states do not collapse here). Now after a good wash you are supposed to take the gloves out, Now you already know that the particles are gloves and hence likewise you can conclude that both the particles together make up a pair of gloves i.e you already know the total properties (spin, momentum, etc.) or their combined state. Now when taking the clothes out of the machine, suppose you got one of the glove out but the other is still in the machine and you don't know about and you have also not seen (or measured) it yet, but the glove in your hand you can see it( or measure it ). Now the probability of the glove in your hand is 50% Right glove and 50% Left glove i.e it is right now in a superposition state : 
+                                                                                                                         |state> = 1/√2 |Left glove> + 1/√2 |Right glove>
+Suppose you saw the glove in your hand and it is the Left glove i.e the superpositioned probabalistic state of the glove collapses to a deterministic state i.e the left glove. Since now you know the measured satte of the particle as well as the combined state of the particles then ypu can be sure about the properties of the other unknown particle easily i.e without even taking the other glove out you are 100% sure that the other unknown glove is the Right glove.
+This is a similar to the analogy I explained in one of my interviews, the interviewrs were happy with this and found it interesting hence here I share it with my other Left brained fellow learners!!
 
 *Note that this is compatible with the qiskit version '0.44.0' and not the latest one.
