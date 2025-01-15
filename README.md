@@ -1,4 +1,4 @@
-**Quantum Teleportation Circuit**
+# **Quantum Teleportation Circuit**
 
 Introduction
 
