@@ -1,24 +1,89 @@
-# Quantum Entanglement Basic
+Quantum Teleportation Circuit 
 
-Quantum Entanglement in Quantum Mechanics refers to the phenomenon of a group of particles where the state of each particle cannot be described independently i.e without the invlovement of the other particles in the shared group. This group of particles interact with each other in the way that their properties like momentum, spin, etc are correlated no matter the distance between them. This Quantum Entanglement is the phenomenon that is fascinating in the way that it lets the properties of unknown entangled particles be known by examining and measuring the particles of the entangled particles known to us, which again is a dilemma in the field of Quantum Mechanics i.e Whether this information is inherent in the particles from the very beginning or this information travels in real time whence one of them is measured, which again raises some questions in the Theory of Special Relativity. This is due to the fact that Albert Einstein in his theory states that nothing in this universe can travel faster then light but if this information is to be travelled in real time then it must defy the former making Special Relativity irrelevant, which, we know for a fact, it is not but if this information is already present somehow in the particles then how come it changes in real time upon performing transformations? Of course Quantum Mechanics is weird and that is Albert Einstein once said , "The more success the quantum theory has, the sillier it looks.".
+Introduction
 
-This repository shows the basic Quantum Entanglement Circuit built using the qiskit* library provided by IBM.
+This repository contains a learning code for simulating quantum teleportation using Qiskit, an open-source quantum computing framework. Quantum teleportation is a fundamental protocol in quantum information theory that allows the transfer of quantum states from one qubit to another, using entanglement and classical communication.
 
-This shows the basic implementation of the circuit where first three qubits are taken and Quantum gates are applied to them as per the rquirements.
+Prerequisites
 
-X Gate = Applied to only a single Qubit. Representation of Pauli-X Gate is a simple Bit-Flip.
-H Gate = Hadamard Gate, applied on a single qubit and changes |0> to |+> and |1> to |-> and vice versa.
-CX Gate = Controlled-X Gate for a binary qubit operation. It is analogous to the classical XOR Gate.
+To run the code, you'll need the following:
+- Python 3.7+
+- Qiskit 0.23.0+ (or the latest version)
 
-Barriers are applied to separate one section of the circuit from the other.
-Next the cicuit is measured which can be seen in the cicuital representation. Measuring quantum circuits is not the sam as the classical ones due to the presence of something known as "Noise" which requires the former to be executed multiple times for the correct outcome to be measured via the probability amplitude of the outcome having more of it.
-Here the "counts" variable dictates the number of times the circuit must execute and provide the output for the same.
-This concludes the basics of the code and its implementation.
+Installation
 
-One personal analogy of mine to understand it better (I don't know if it really is mathematically and theoretically correct to think about it like this but the fact that it makes Entanglement easier to understand is what drives me to share with everyone): 
-Suppose the group only containes two entangled particles and think of them as a pair of gloves. Now to illustrate the irrelevance of the distance between them, think of them being washed with other clothes (ahem* unentangled particles ahem*) in a washing machine ( Emulating a suitable environment for the entanglement to take place i.e the states do not collapse here). Now after a good wash you are supposed to take the gloves out, Now you already know that the particles are gloves and hence likewise you can conclude that both the particles together make up a pair of gloves i.e you already know the total properties (spin, momentum, etc.) or their combined state. Now when taking the clothes out of the machine, suppose you got one of the glove out but the other is still in the machine and you don't know about and you have also not seen (or measured) it yet, but the glove in your hand you can see it( or measure it ). Now the probability of the glove in your hand is 50% Right glove and 50% Left glove i.e it is right now in a superposition state : 
-                                                                                                                         |state> = 1/√2 |Left glove> + 1/√2 |Right glove>
-Suppose you saw the glove in your hand and it is the Left glove i.e the superpositioned probabalistic state of the glove collapses to a deterministic state i.e the left glove. Since now you know the measured satte of the particle as well as the combined state of the particles then ypu can be sure about the properties of the other unknown particle easily i.e without even taking the other glove out you are 100% sure that the other unknown glove is the Right glove.
-This is a similar to the analogy I explained in one of my interviews, the interviewrs were happy with this and found it interesting hence here I share it with my other Left brained fellow learners!!
+You can install Qiskit using pip if you don't have it installed already:
 
-*Note that this is compatible with the qiskit version '0.44.0' and not the latest one.
+```bash
+pip install qiskit
+```
+
+For running the code in a Jupyter notebook, you may also need to install Jupyter:
+
+```bash
+pip install jupyter
+```
+
+Contents
+
+The repository includes the following files:
+- `quantum_teleportation.py`: Main script for simulating the quantum teleportation circuit.
+- `teleportation.ipynb`: Jupyter notebook containing the same code with added explanations and visualizations.
+- `README.md`: This file.
+
+Quantum Teleportation Circuit
+
+The quantum teleportation protocol involves three qubits:
+1. Alice's Qubit (qubit 0): The qubit whose state we want to teleport.
+2. Entangled Qubit 1 (qubit 1): Part of the entangled pair used for teleportation.
+3. Entangled Qubit 2 (qubit 2): The other part of the entangled pair, initially with Bob.
+
+Steps of the Protocol
+
+1. Preparation:
+   - Prepare qubit 0 in the state to be teleported.
+   - Create an entangled pair of qubits (qubits 1 and 2).
+
+2. Bell Measurement:
+   - Apply a CNOT gate and a Hadamard gate on qubits 0 and 1.
+   - Measure qubits 0 and 1, sending the classical results to Bob.
+
+3. Classical Communication:
+   - Based on the measurement results, Alice sends two classical bits to Bob.
+   - Bob applies the corresponding Pauli gates on qubit 2 to recover the teleported state.
+
+Running the Code
+
+Using the Python Script
+
+You can run the main script directly using Python:
+
+```bash
+python quantum_teleportation.py
+```
+
+Using the Jupyter Notebook
+
+You can explore the quantum teleportation protocol interactively using the Jupyter notebook:
+
+```bash
+jupyter notebook teleportation.ipynb
+```
+
+Visualization
+
+The code visualizes the quantum circuit and the measurement results using Qiskit's built-in tools. The final outcome is displayed in a histogram showing the probabilities of different measurement results.
+
+Conclusion
+
+This code provides a hands-on learning experience for understanding quantum teleportation, a key concept in quantum computing.
+
+Feel free to experiment with the code and explore the fascinating world of quantum mechanics!
+
+## Resources
+
+- [Qiskit Documentation](https://qiskit.org/documentation/)
+- [Quantum Teleportation Protocol](https://qiskit.org/textbook/ch-algorithms/teleportation.html)
+- [IBM Quantum Experience](https://quantum-computing.ibm.com/)
+
+---
